@@ -163,7 +163,7 @@ export default function Home() {
       const actualPoints = [];
       const forecastPoints = [];
       const currentDate = new Date();
-      let checkDate = new Date(start);
+      const checkDate = new Date(start);
 
       while (checkDate <= end) {
         const matchingData = dailyData.find(d => {
