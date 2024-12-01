@@ -319,12 +319,19 @@ export default function Home() {
             <p>
               Current winner: <span className="font-bold text-blue-600">
                 {determineWinner(
+                  getTemperature(meteorologicalData, '2024'),
                   getTemperature(meteorologicalData, '2025')
                 ) || 'Not yet determined'}
               </span>
             </p>
             <div className="text-sm text-gray-600 mt-2">
               <p className="mb-1">
+                <span className="font-medium">2024:</span> Dec 1, 2023 - Feb 28, 2024
+                <span className="ml-2 text-blue-600">
+                  ({getTemperature(meteorologicalData, '2024')}°C)
+                </span>
+              </p>
+              <p>
                 <span className="font-medium">2025:</span> Dec 1, 2024 - Feb 28, 2025
                 <span className="ml-2 text-blue-600">
                   ({getTemperature(meteorologicalData, '2025')}°C)
@@ -337,13 +344,20 @@ export default function Home() {
             <p>
               Current winner: <span className="font-bold text-blue-600">
                 {determineWinner(
+                  getTemperature(astronomicalData, '2024'),
                   getTemperature(astronomicalData, '2025')
                 ) || 'Not yet determined'}
               </span>
             </p>
             <div className="text-sm text-gray-600 mt-2">
               <p className="mb-1">
-                <span className="font-medium">2025:</span> Dec 21, 2024 04:12 - Mar 20, 2025
+                <span className="font-medium">2024:</span> Dec 21, 2023 - Mar 20, 2024
+                <span className="ml-2 text-blue-600">
+                  ({getTemperature(astronomicalData, '2024')}°C)
+                </span>
+              </p>
+              <p>
+                <span className="font-medium">2025:</span> Dec 21, 2024 - Mar 20, 2025
                 <span className="ml-2 text-blue-600">
                   ({getTemperature(astronomicalData, '2025')}°C)
                 </span>
