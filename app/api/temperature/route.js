@@ -45,7 +45,7 @@ const winterDates = {
       const dailyData = [];
       for (let year = startYear; year <= endYear; year++) {
         // For historical years, check cache
-        const cachedData = readCache(`yearly-${year}`);
+        const cachedData = await readCache(`yearly-${year}`);
         if (cachedData) {
           dailyData.push(...cachedData);
           continue;
