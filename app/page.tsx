@@ -292,15 +292,16 @@ export default function Home() {
     return entry ? entry[1].toFixed(1) : 'N/A';
   };
 
-  const determineWinner = (data2025: string | number) => {
-    // If temperature is N/A, return null
-    if (data2025 === 'N/A') {
+  const determineWinner = (temp2024: string | number, temp2025: string | number) => {
+    // If either temperature is N/A, return null
+    if (temp2024 === 'N/A' || temp2025 === 'N/A') {
       return null;
     }
     
-    const temp2025 = typeof data2025 === 'string' ? parseFloat(data2025) : data2025;
+    const t2024 = typeof temp2024 === 'string' ? parseFloat(temp2024) : temp2024;
+    const t2025 = typeof temp2025 === 'string' ? parseFloat(temp2025) : temp2025;
     
-    if (temp2025 >= 0) {
+    if (t2025 >= t2024) {
       return 'neomonk';
     }
     return 'pajaro';
